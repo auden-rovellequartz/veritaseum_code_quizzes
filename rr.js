@@ -55,22 +55,22 @@ module.exports =
  
  I will be producing a video of this--information on accessing video can be found here: http://bit.ly/2AKHPtE
  
- what made this coding test particularly challenging is that a chunk of code 
- was provided without much context as to the specific business process or 
- technical objective this code is intended to support.  
+ A challenging aspect of this coding quiz is that the code was provided without much context as to the specific 
+ business process or technical objective this code is intended to support.  
  
- In the absence of such guidance (and I did ask...) I was left to use my 
- imagination as to a possible/plausible use cases for this code and then fill in 
- the gaps as I worked towards building functionality that supports the use case I 
- imagined.
+ I was left to use my imagination as to a possible/plausible use cases for this code and then fill in 
+ the gaps as I worked towards building functionality that supports the use case I imagined.
  
  MY IMAGINED USE CASE: 
  
- >>> the "very expensive resource" relates to a relatively costly database query 
-	for massive amounts of data records pertaining to a user. 
+ >>> the "very expensive resource" relates to relatively costly access operations for example, perhaps 
+	(a) database query for massive amounts of data 
+	(b) computationally intensive math calculations, 
+	(c) time intensive image processing
+	(d) any other such operations one would want to minimize - - - etc., etc., 
  
- >>> the different namespaces relate perhaps to different markets (where 
-	very similar templates can apply to different cryptocurrency markets)
+ >>> the different namespaces could relate perhaps to different markets (where 
+		very similar templates can apply to different cryptocurrency markets)
  
  >>> active references to these "very expensive resource" elements are held in some sort of easier/faster to access cache until they are closed
 */
