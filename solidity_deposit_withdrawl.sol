@@ -7,61 +7,55 @@ contract MyContract
 		mapping (address => uint) balances;
 		mapping (address => bool) deposits_made;
 		mapping (address => uint) deposit_timestamps;
+		
 		uint time_in_seconds_since_deposit;
+		uint test_fixture_time_offset = 0; // for test purposes only (to modify time_in_seconds_since_deposit)
 		uint constant SECONDS_IN_ONE_WEEK = 604800;
 	
 		event Transfer(address indexed _from, address indexed _to, uint256 _value);
+		event Test_Parameters(uint _value);
 	
 		function withdraw_initiate(uint amount) public returns(bool) 
 			{
-				time_in_seconds_since_deposit = now - deposit_timestamps[msg.sender];
-				
-				//time_in_seconds_since_deposit = SECONDS_IN_ONE_WEEK + 1; //for test purposes only (comment line above and uncomment this one for testing)
-				
+				//time_in_seconds_since_deposit = now - deposit_timestamps[msg.sender];
+				time_in_seconds_since_deposit = SECONDS_IN_ONE_WEEK + test_fixture_time_offset; //for test purposes only (comment line above and uncomment this one for testing)
 				if (time_in_seconds_since_deposit <= SECONDS_IN_ONE_WEEK)
 				{
 					return false;
 				}
 				balances[msg.sender] = balances[msg.sender] - amount;	  
-				
 				return true;
-		  
 			}
-			
-		function withdraw_process(uint amount) public returns(bool) 
+		function withdraw_process(uint amount) public
 			{
 				// if this were a real project this function may be modified as needed
 				// to accommodate other dependencies and/or update requirements
 				emit Transfer(this, msg.sender, amount);
-				
-				return true;
-		  
 			}
-		
 		function deposit_initiate(uint amount) public returns(bool) 
 			{
 				if (deposits_made[msg.sender] == true) 
 				{
 					return false;
 				}
-				
 				balances[msg.sender] = balances[msg.sender] + amount;	  
-				
 				deposits_made[msg.sender] = true;
-				
 				deposit_timestamps[msg.sender] = now;
-				
 				return true;
-		  
 			}
-		function deposit_process(uint amount) public returns(bool) 
+		function deposit_process(uint amount) public
 			{
 				// if this were a real project this function may be modified as needed
 				// to accommodate other dependencies and/or update requirements
 				emit Transfer(msg.sender, this, amount);
-				
-				return true;
-		  
+			}
+		function test_offset_initiate(uint offset) public
+			{
+				test_fixture_time_offset = offset;
+			}
+		function test_offset_process(uint offset) public
+			{
+				emit Test_Parameters(offset);
 			}
 	}
 	
@@ -83,4 +77,5 @@ contract MyContract
       other code that may be needed based on context!
  4. I will be producing an actual video file of this--information on accessing video file can be found here: http://bit.ly/2AKHPtE
 */
+
 
