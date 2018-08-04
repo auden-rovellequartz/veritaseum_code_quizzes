@@ -64,15 +64,16 @@ module.exports =
  MY IMAGINED USE CASE: 
  
  >>> the "very expensive resource" relates to relatively costly access operations for example, perhaps 
-	(a) database query for massive amounts of data 
-	(b) computationally intensive math calculations, 
-	(c) time intensive image processing
-	(d) any other such operations one would want to minimize - - - etc., etc., 
+		(a) database query for massive amounts of data 
+		(b) computationally intensive math calculations, 
+		(c) time intensive image processing
+		(d) any other such operations one would want to minimize - - - etc., etc., 
  
- >>> the different namespaces could relate perhaps to different markets (where 
-		very similar templates can apply to different cryptocurrency markets)
+ >>> the different namespaces could relate perhaps to different markets (where very similar templates 
+		can apply to different cryptocurrency markets)
  
- >>> active references to these "very expensive resource" elements are held in some sort of easier/faster to access cache until they are closed
+ >>> active references to these "very expensive resource" elements are held in some sort of easier/faster 
+		to access cache until they are closed
 */
 
 
