@@ -7,8 +7,6 @@ var NAMESPACE = {}, NAMESPACE_02 = {};
 proto.resource_referencer.call(NAMESPACE);    
 proto.resource_referencer.call(NAMESPACE_02);   
 
-//			t.true(String() == test_ref_01);
-
 var test_ref_01 = String({})
 var test_ref_02 = String({})
 var test_ref_03 = String([])
