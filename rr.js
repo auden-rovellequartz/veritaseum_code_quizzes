@@ -34,7 +34,7 @@ module.exports =
 			else
 			{
 				this.internal_active_personas[id] = 
-					"I'm a very expensive resource associated with ID " + String(id);
+					"resource assoc. w/ ID: " + String(id);
 				this.internal_expensive_resource = this.internal_active_personas[id];
 			};
 			return this.internal_expensive_resource;
@@ -75,5 +75,3 @@ module.exports =
  >>> active references to these "very expensive resource" elements are held in some sort of easier/faster 
 		to access cache until they are closed
 */
-
-
